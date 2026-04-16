@@ -261,13 +261,81 @@
         <div class="project-card project-featured reveal">
           <div class="project-tag project-tag-featured">⭐ Flagship Project</div>
           <h3>Universal Fix App (v7.26)</h3>
-          <p>A comprehensive Windows desktop self-service application that empowers end-users to resolve common IT issues independently, reducing support ticket volume. Built with C# Windows Forms as a single-file executable distributed to the entire organization.</p>
-          <p><strong>Key Features:</strong> Internet speed & packet-loss testing (Ookla), Citrix session reset, microphone unmute, full network adapter reset, one-click Jira ticket creation, and an AI-powered Citrix chatbot with inline image support for troubleshooting guides.</p>
-          <p><strong>Background Automation:</strong> Silent hourly network health tracker via Task Scheduler (no admin required), Google Sheets integration for automatic test result logging, and stealth monitoring that runs every 30 seconds. Self-installing Windows Service architecture with VBScript silent execution wrappers.</p>
+          <p class="featured-lead">A Windows desktop self-service application I designed and built from the Citrix admin's perspective to solve <strong>~90% of recurring Citrix-related issues</strong> at the user level &mdash; drastically reducing ticket volume and giving the IT team a historical database of user network health.</p>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-num">1</div>
+              <div class="feature-body">
+                <h4>Citrix Windows Issues Fix</h4>
+                <p>One click restarts all Citrix services (CitrixWorkspaceAgent, HdxRtcEngine, etc.) and resets the session. Resolves the most common "Citrix frozen / disconnected / black screen" tickets without user involvement or admin intervention.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-num">2</div>
+              <div class="feature-body">
+                <h4>Microphone Auto-Fix</h4>
+                <p>Scans the Windows audio Control Panel settings, detects disabled/muted mic devices, and automatically re-enables and unmutes them. Solves Ziwo/Genesys call-center mic failures in seconds &mdash; one of our highest-volume recurring tickets.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-num">3</div>
+              <div class="feature-body">
+                <h4>Network Adapter Reset</h4>
+                <p>Full network stack reset (ipconfig flushdns, release/renew, Winsock reset, adapter cycle) to resolve connectivity issues without requiring the user to reboot or call support.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-num">4</div>
+              <div class="feature-body">
+                <h4>Internet Health Test</h4>
+                <p>Integrated Ookla Speedtest plus a 30-second packet-loss and gateway latency test (tcping). Gives admins a complete connectivity snapshot when users report slow Citrix sessions.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-num">5</div>
+              <div class="feature-body">
+                <h4>Citrix Troubleshooting Chatbot</h4>
+                <p>Built-in AI chatbot powered by our company knowledge base &mdash; users describe their issue in plain English (e.g. "Ziwo calls dropping") and get step-by-step solutions with inline screenshot images and direct Notion documentation links.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-num">6</div>
+              <div class="feature-body">
+                <h4>Documentation Hub</h4>
+                <p>Direct deep-links to our internal Notion pages for every known issue category &mdash; users can self-serve with the exact same runbooks the IT team uses.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-num">7</div>
+              <div class="feature-body">
+                <h4>One-Click Jira Ticket</h4>
+                <p>If self-service can't fix it, one button opens a pre-populated Jira ticket directly in our queue with the user's system info already attached &mdash; no manual form filling.</p>
+              </div>
+            </div>
+
+            <div class="feature-item feature-highlight">
+              <div class="feature-num">8</div>
+              <div class="feature-body">
+                <h4>Silent Network Health Tracker (Admin Superpower)</h4>
+                <p>Runs hourly in the background via Task Scheduler (no admin rights needed on the user's machine) and uploads each test to Google Sheets, building a <strong>per-user historical connectivity database</strong>. When a user complains about Citrix performance, we just check their history &mdash; we know if they've had bad network for days, if it's localized to them, or if it's environmental. Turns "it was slow yesterday" from user guesswork into hard data.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="featured-footer"><strong>Impact:</strong> Deployed organization-wide. Self-installing single-file .exe (no dependencies, no admin required). Includes single-instance enforcement, stealth background execution via VBScript wrappers, and auto-provisioned desktop shortcuts.</p>
+
           <div class="project-tech">
             <span>C#</span><span>Windows Forms</span><span>PowerShell</span>
             <span>Windows Service</span><span>Task Scheduler</span><span>Google Apps Script</span>
-            <span>Ookla Speedtest</span><span>VBScript</span><span>Batch</span>
+            <span>Google Sheets API</span><span>Ookla Speedtest</span><span>Notion Integration</span>
+            <span>Jira Integration</span><span>VBScript</span><span>Batch</span>
           </div>
         </div>
 
