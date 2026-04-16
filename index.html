@@ -70,7 +70,7 @@
       <div class="about-grid">
         <div class="about-image reveal">
           <div class="about-photo">
-            <img src="photo.jpg" alt="Andrew Emil Isaac" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <img src="photo.jpg" alt="Andrew Emil Isaac" onerror="this.src='photo.png';this.onerror=function(){this.src='photo.webp';this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex'}}">
             <div class="about-photo-placeholder" style="display:none">
               <svg viewBox="0 0 24 24" fill="currentColor" width="80" height="80"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
               <p>Add photo.jpg to folder</p>
@@ -99,6 +99,10 @@
             <div class="stat">
               <span class="stat-number">CCNA</span>
               <span class="stat-label">Networking</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">CCA-V</span>
+              <span class="stat-label">Citrix Virtualization</span>
             </div>
             <div class="stat">
               <span class="stat-number">C1</span>
