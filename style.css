@@ -698,6 +698,11 @@ ul { list-style: none; }
   box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
 }
 
+.project-tag-ps {
+  background: linear-gradient(135deg, #012456, #1e40af);
+  box-shadow: 0 2px 10px rgba(1, 36, 86, 0.3);
+}
+
 .featured-lead {
   font-size: 1rem !important;
   line-height: 1.8;

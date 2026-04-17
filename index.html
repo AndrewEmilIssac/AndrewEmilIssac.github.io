@@ -140,6 +140,7 @@
               <li>Developed AppSheet apps for cross-departmental automation (IT, HR, Payroll, Finance)</li>
               <li>Built AI-powered chatbots using Google Apps Script for first-line support</li>
               <li>Developed <strong>Universal Fix App</strong> (C#/PowerShell) — self-service Windows desktop tool enabling end-users to resolve common IT issues independently</li>
+              <li>Authored <strong>PowerShell scripts</strong> for VDI administration: UPM profile migrations, NTFS permission audits, and master image software update automation</li>
               <li>Manage Azure Active Directory: user provisioning, group policies, access control</li>
               <li>Track incidents in Jira ensuring SLA compliance; monitor networks via PRTG and UniFi</li>
             </ul>
@@ -367,6 +368,33 @@
           <p>Automated solution that runs periodic connectivity and latency checks across office locations, proactively identifying outages or degraded performance before users report issues.</p>
           <div class="project-tech">
             <span>Network Testing</span><span>Alerting</span><span>Monitoring</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-tag project-tag-ps">PowerShell / VDI</div>
+          <h3>UPM Profile Migration Script</h3>
+          <p>PowerShell script that bulk-migrates user profiles between folders and file shares as part of UPM storage restructuring. Ensures profile integrity and preserves access rights during Citrix VDI environment changes and storage consolidations.</p>
+          <div class="project-tech">
+            <span>PowerShell</span><span>Citrix UPM</span><span>File Shares</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-tag project-tag-ps">PowerShell / VDI</div>
+          <h3>UPM Permissions Audit Script</h3>
+          <p>PowerShell script that audits and remediates NTFS permissions across every UPM user profile folder, guaranteeing all users have the correct access rights on their profile shares. Eliminates permission-related Citrix login failures.</p>
+          <div class="project-tech">
+            <span>PowerShell</span><span>NTFS ACLs</span><span>Citrix UPM</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-tag project-tag-ps">PowerShell / VDI</div>
+          <h3>Master Image Update Script</h3>
+          <p>PowerShell script that automates software patching and application updates across the Citrix master image, keeping the golden image current so every published VDI session receives the latest versions without manual rebuilding.</p>
+          <div class="project-tech">
+            <span>PowerShell</span><span>Master Image</span><span>Citrix DaaS</span>
           </div>
         </div>
 
