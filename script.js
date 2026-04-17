@@ -130,10 +130,50 @@ style.textContent = `
 document.head.appendChild(style);
 createParticles();
 
-// ========== Contact Form (Placeholder) ==========
-document.getElementById('contact-form').addEventListener('submit', (e) => {
+// ========== Contact Form (Formspree AJAX) ==========
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+const submitBtn = document.getElementById('submit-btn');
+
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  alert('Thank you for your message! This form is a placeholder. To make it functional, connect it to a service like Formspree, EmailJS, or your own backend.');
+
+  // Check if Formspree is configured
+  if (contactForm.action.includes('YOUR_FORM_ID')) {
+    formStatus.textContent = 'Form not yet configured. Please use email instead: andrewemil989@yahoo.com';
+    formStatus.className = 'form-status form-status-error';
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+  formStatus.textContent = '';
+  formStatus.className = 'form-status';
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      formStatus.textContent = '✓ Thanks! Your message has been sent. I will reply soon.';
+      formStatus.className = 'form-status form-status-success';
+      contactForm.reset();
+    } else {
+      const data = await response.json();
+      const errorMsg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong.';
+      formStatus.textContent = '✗ ' + errorMsg;
+      formStatus.className = 'form-status form-status-error';
+    }
+  } catch (error) {
+    formStatus.textContent = '✗ Network error. Please try again or email directly.';
+    formStatus.className = 'form-status form-status-error';
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Message';
+  }
 });
 
 // ========== Smooth scroll for all anchor links ==========
